@@ -4,7 +4,7 @@ This folder contains all of the code necessary to reproduce the numerical experi
 
 To access the experiments presented in this repository, you can either:
 1. Install locally the source code and required packages. How to do this is explained in the `1. Installation` and `2. Running the code` sections of this document.
-2. Explore, modify and run the source code in the cloud by clicking the following badge and start a Binder session [TODO: add badge and setup binder]
+2. Explore, modify and run the source code in the cloud by clicking the following badge and start a Binder session [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/BayesianLearning/PenduSMC/master).
 
 ## 1. Installation
 
@@ -15,7 +15,7 @@ To obtain the source code, you can clone this repository using `git` by typing t
 git clone git@github.com:BayesianLearning/PenduSMC.git
 ```
 
-If you do not want to use git, GitHub provides the option to download a zip file of the repository. A link to download the zip file can be found on the home page of the repository. [TODO: either provide a link to this page, or (if possible) to the zip dowlnload]
+If you do not want to use git, GitHub provides the option to download a zip file of the repository. A link to download the zip file can be found on the home page of the repository or simply click the following link: [Dowload ZIP](https://github.com/BayesianLearning/PenduSMC/archive/master.zip)
 
 ### 1.2 Dependencies
 Dependencies are managed using the `anaconda` package manager. Anaconda can be installed for any major operating system from the [Anaconda website](https://anaconda.org/).
