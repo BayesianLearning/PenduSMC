@@ -3,9 +3,9 @@
 This folder contains all of the code necessary to reproduce the numerical experiments presented in 
 
 
-Matthieu Bulté, Jonas Latz, Elisabeth Ullmann (2018):
-__A practical example of non-linear Bayesian filtering of model parameters__
-(Submitted, [arXiv preprint](https://arxiv.org/abs/1807.08713)).
+>Matthieu Bulté, Jonas Latz, Elisabeth Ullmann (2018):
+>__A practical example of non-linear Bayesian filtering of model parameters__
+>(Submitted, [arXiv preprint](https://arxiv.org/abs/1807.08713)).
 
 
 To access the experiments presented in this repository, you can either:
