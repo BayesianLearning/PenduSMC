@@ -1,6 +1,6 @@
 # PenduSMC
 
-This folder contains all of the code necessary to reproduce the numerical experiments presented in "A practical example of non-linear Bayesian filtering of model parameters" ([arXiv preprint](https://arxiv.org/abs/1807.08713))
+This folder contains all of the code necessary to reproduce the numerical experiments presented in "A practical example of non-linear Bayesian filtering of model parameters" ([arXiv preprint](https://arxiv.org/abs/1807.08713)).
 
 To access the experiments presented in this repository, you can either:
 1. Install locally the source code and required packages. How to do this is explained in the `1. Installation` and `2. Running the code` sections of this document.
