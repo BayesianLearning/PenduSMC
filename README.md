@@ -88,9 +88,15 @@ and then simply open the `Plots.ipynb` notebook in the `plots/` folder.
 When using any of the material provided in this github repository, please cite:
 ```
 @ARTICLE{BLU2018,
-   author = {{Bult\'e}, M and {Latz}, J and {Ullmann}, E},
-    title = "{A practical example of non-linear Bayesian filtering of model parameters}",
-  journal = {Submitted},
+   author = {{Bult{\'e}}, M. and {Latz}, J. and {Ullmann}, E.},
+    title = "{A practical example for the non-linear Bayesian filtering of model parameters}",
+  journal = {ArXiv e-prints},
+archivePrefix = "arXiv",
+   eprint = {1807.08713},
+ primaryClass = "stat.CO",
+ keywords = {Statistics - Computation, Mathematics - Numerical Analysis},
      year = 2018,
+   adsurl = {http://adsabs.harvard.edu/abs/2018arXiv180708713B},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
 ```
