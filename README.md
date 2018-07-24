@@ -85,6 +85,7 @@ jupyter notebook
 and then simply open the `Plots.ipynb` notebook in the `plots/` folder.
 
 ## Citation
+When using any of the material provided in this github repository, please cite:
 ```
 @ARTICLE{BLU2018,
    author = {{Bult\'e}, M and {Latz}, J and {Ullmann}, E},
