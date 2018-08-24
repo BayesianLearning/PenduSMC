@@ -202,36 +202,7 @@ class ParticleApproximation:
                 proposal_potentials = target_potential(proposals)
 
         return total_accepted / (n_steps * self.num_particles)
-        
-    def sis_update(self, importance_potential, target_potential, proposal_kernel, correction_steps=1):
-        """
-        sis_update(importance_potential, target_potential, proposal_kernel, correction_steps=1)
-        
-        Updates the current particle approximation using the SIS algorithm with Metropolis-Hastings MCMC correction
-        steps.
-        
-        Parameters
-        ----------
-        importance_potential : (np.ndarray) -> np.ndarray
-            Potential function of the importance distribution.       
-        target_potential: (np.ndarray) -> np.ndarray
-            Potential function of the target distribution.
-        proposal_kernel: (np.ndarray) -> np.ndarray
-            Function to sample proposals for the Metropolis-Hastings algorithm, conditioned
-            on the current particles, passed as a parameter.
-        correction_steps : int, optional
-            Number of steps of sampling from the Markov Chain.
-    
-        Returns
-        -------
-        sis_update : float
-            Acceptance ratio of the correction steps
-        """
-        self.reweight(importance_potential, target_potential)
-        acceptance_ratio = self.mh_correction(target_potential, proposal_kernel, n_steps=correction_steps)
-        
-        return acceptance_ratio
-        
+                
     def smc_update(self, importance_potential, target_potential, proposal_kernel, correction_steps=1, ess_ratio=2):
         """
         smc_update(importance_potential, target_potential, proposal_kernel, correction_steps=1, ess_ratio=2)
@@ -259,8 +230,9 @@ class ParticleApproximation:
         smc_update : (float, float)
             (Acceptance ratio of the correction steps, ESS after reweighting)
         """
-        acceptance_ratio = self.sis_update(importance_potential, target_potential, proposal_kernel, correction_steps)
-        
+        self.reweight(importance_potential, target_potential)
+        acceptance_ratio = self.mh_correction(target_potential, proposal_kernel, n_steps=correction_steps)
+
         ess = self.effective_sample_size()
         if ess < self.num_particles/ess_ratio:
             self.resample()

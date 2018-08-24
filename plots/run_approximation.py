@@ -47,14 +47,17 @@ def gaussian_proposal(x):
 # Run the approximation
 approximation = ParticleApproximation(options.M, prior)
 
-for n in range(mesh.size+1):
-    importance_potential = lambda x: vpotential(x, n-1)
-    target_potential = lambda x: vpotential(x, n)
+if options.method == "SMC":
+    for n in range(mesh.size+1):
+        importance_potential = lambda x: vpotential(x, n-1)
+        target_potential = lambda x: vpotential(x, n)
 
-    if options.method == "SMC":
         approximation.smc_update(importance_potential, target_potential, gaussian_proposal, correction_steps=5, ess_ratio=1.3)
-    else:
-        approximation.sis_update(importance_potential, target_potential, gaussian_proposal, correction_steps=5)
+        
+        approximation.save(options.filename + '_' + str(n))
+else:
+    importance_potential = lambda x: prior.logpdf(x)
+    target_potential = lambda x: vpotential(x, mesh.size)
 
-    # Save intermediary approximation
-    approximation.save(options.filename + '_' + str(n))
+    approximation.reweight(importance_potential, target_potential)
+    approximation.save(options.filename)    
