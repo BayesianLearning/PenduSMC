@@ -149,9 +149,9 @@ class ParticleApproximation:
         self.weights = np.exp(self.weights)
         self.weights /= self.weights.sum()
 
-    def mh_correction(self, target_potential, proposal_kernel, n_steps=1):
+    def mh_correction(self, target_potential, proposal_kernel, n_steps):
         """
-        mh_correction(target_potential, proposal_kernel, n_steps=1) : float
+        mh_correction(target_potential, proposal_kernel, n_steps) : float
         
         Improve the particle approximation by sampling several steps of the Metropolis-Hastings
         Markov Chain constructed using a given proposal kernel and the with the given target
@@ -203,9 +203,9 @@ class ParticleApproximation:
 
         return total_accepted / (n_steps * self.num_particles)
                 
-    def smc_update(self, importance_potential, target_potential, proposal_kernel, correction_steps=1, ess_ratio=2):
+    def smc_update(self, importance_potential, target_potential, proposal_kernel, correction_steps, ess_ratio):
         """
-        smc_update(importance_potential, target_potential, proposal_kernel, correction_steps=1, ess_ratio=2)
+        smc_update(importance_potential, target_potential, proposal_kernel, correction_steps, ess_ratio)
         
         Updates the current particle approximation using the SMC algorithm with Metropolis-Hastings MCMC correction
         steps.
