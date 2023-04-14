@@ -29,7 +29,7 @@ Dependencies are managed using the `anaconda` package manager. Anaconda can be i
 
 Anaconda allows creating isolated python environment in which packages can be installed without affecting your global python installation. We provide the configuration for such an environment containing all the dependencies required for running the experiments. You can install this environment by typing the following command in your terminal
 ```
-conda create --name pendusmc --file environment.yml
+conda env create --name pendusmc --file environment.yml
 ```
 
 You can then activate the environment by typing the following command in your terminal.
@@ -83,6 +83,10 @@ Once you are done with running the benchmarks, you can reproduce the plots prese
 jupyter notebook
 ```
 and then simply open the `Plots.ipynb` notebook in the `plots/` folder.
+
+### Acknowledgement
+
+Thanks to Laura Scarabosio and Sabrina Schönfeld for finding a bug in the definition of `loglikelihood` in `PenduSMC.ipynb`.
 
 ## Citation
 When using any of the material provided in this github repository, please cite:
